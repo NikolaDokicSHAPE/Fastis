@@ -23,6 +23,8 @@ final class DayCell: JTACDayCell {
     lazy var selectionBackgroundView: UIView = {
         let view = UIView()
         view.isHidden = true
+        view.layer.borderWidth = 3
+        view.layer.borderColor = CGColor(red: 0, green: 0.76078, blue: 0.74902, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
