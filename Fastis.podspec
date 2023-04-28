@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.screenshot       = 'https://user-images.githubusercontent.com/4445510/187880045-cb66b662-095b-4173-b795-b1e732cc2166.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ilya Kharlamov' => 'kharlamov@retailcrm.ru' }
-  s.source           = { :git => 'https://github.com/simla-tech/Fastis.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/NikolaDokicSHAPE/Fastis.git', :tag => s.version.to_s }
 
   s.swift_version = '5.0'
   s.ios.deployment_target = '13.0'
