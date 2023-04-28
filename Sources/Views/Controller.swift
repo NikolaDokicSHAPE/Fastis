@@ -8,6 +8,7 @@
 
 import JTAppleCalendar
 import UIKit
+import Combine
 
 /**
  Main controller of Fastis framework. Use it to create and present dade picker
@@ -158,8 +159,12 @@ open class FastisController<Value: FastisValue>: UIViewController, JTACMonthView
     private var privateMinimumDate: Date?
     private var privateMaximumDate: Date?
     private var privateSelectMonthOnHeaderTap = false
+    public var valueChangedSubject = PassthroughSubject<FastisRange, Never>()
     private var value: Value? {
         didSet {
+            if self.value != nil {
+                valueChangedSubject.send(self.value as! FastisRange)
+            }
             self.updateSelectedShortcut()
             self.currentValueView.currentValue = self.value
             self.doneBarButtonItem.isEnabled = self.allowToChooseNilDate || self.value != nil
