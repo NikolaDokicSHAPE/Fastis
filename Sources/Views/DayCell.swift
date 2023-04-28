@@ -284,6 +284,7 @@ final class DayCell: JTACDayCell {
                 self.dateLabel.textColor = self.config.dateLabelUnavailableColor
             } else if !config.isSelectedViewHidden {
                 self.dateLabel.textColor = self.config.selectedLabelColor
+                self.dateLabel.font = self.config.selectedLabelFont
             } else if !config.rangeView.isHidden {
                 self.dateLabel.textColor = self.config.onRangeLabelColor
             } else {
@@ -363,6 +364,8 @@ public extension FastisConfig {
          Default value — `.white`
          */
         public var selectedLabelColor: UIColor = .white
+        
+        public var selectedLabelFont: UIFont = .systemFont(ofSize: 17)
 
         /**
          Corner radius of cell when date is a start or end of selected range
