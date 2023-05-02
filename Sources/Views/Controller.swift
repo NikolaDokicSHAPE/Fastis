@@ -160,6 +160,9 @@ open class FastisController<Value: FastisValue>: UIViewController, JTACMonthView
     private var privateMaximumDate: Date?
     private var privateSelectMonthOnHeaderTap = false
     public var valueChangedSubject = PassthroughSubject<FastisRange, Never>()
+    public func clearDates() {
+        self.currentValueView.onClear?()
+    }
     private var value: Value? {
         didSet {
             if self.value != nil {
